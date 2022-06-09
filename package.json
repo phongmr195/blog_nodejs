@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "start": "nodemon --inspect src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "sass --no-source-map --watch src/resources/scss/app.scss src/public/css/app.css"
   },
   "repository": {
     "type": "git",
@@ -22,7 +23,9 @@
     "express-handlebars": "^6.0.6"
   },
   "devDependencies": {
+    "gulp-sass": "^5.1.0",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.16",
+    "sass": "^1.52.3"
   }
 }
