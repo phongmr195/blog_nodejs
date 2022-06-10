@@ -5,10 +5,9 @@ class PageController {
      * @param mixed req
      * @param mixed res
      */
-     index(req, res)
-     {
-         return res.render('home');
-     }
+    index(req, res) {
+        return res.render('home');
+    }
 }
 
-module.exports = new PageController;
+module.exports = new PageController();

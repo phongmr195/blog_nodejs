@@ -4,6 +4,7 @@
   "description": "Create blog simple with Nodejs and Expressjs Framework",
   "main": "src/index.js",
   "scripts": {
+    "format_code": "prettier --single-quote --trailling-comma all --write 'src/**/*.{js,json,scss}'",
     "start": "nodemon --inspect src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "sass --no-source-map --watch src/resources/scss/app.scss src/public/css/app.css"
@@ -23,9 +24,11 @@
     "express-handlebars": "^6.0.6"
   },
   "devDependencies": {
-    "gulp-sass": "^5.1.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.1",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.16",
+    "prettier": "^2.6.2",
     "sass": "^1.52.3"
   }
 }
