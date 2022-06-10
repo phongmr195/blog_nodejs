@@ -10,7 +10,7 @@ const db = require('./config/db');
 // Load static folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Use morgan
+// Use morgan log
 app.use(morgan('combined'));
 
 // Connect to DB
@@ -24,12 +24,12 @@ app.engine(
     })
 );
 app.set('view engine', 'hbs');
-app.set('views', path.join(__dirname, '/resources/views'));
+app.set('views', path.join(__dirname, 'resources', 'views'));
 
 // Load all route for app
 routes(app);
 
 // Run app
 app.listen(port, () =>
-    console.log(`Test example app listening at http://localhost:${port}`)
+    console.log(`App listening at http://localhost:${port}`)
 );
