@@ -9,14 +9,12 @@ const port = 5000;
 app.use(express.static(path.join(__dirname, 'public')));
 // Use morgan
 app.use(morgan('combined'));
-// Use tempalte engine
+// Use template engine
 app.engine('hbs', handlebars.engine({
     extname: ".hbs"
 }));
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, '/resources/views'));
-console.log(path.join(__dirname, '/resources/views'));
-
 
 app.get('/', (req, res) => {
     return res.render('home');
