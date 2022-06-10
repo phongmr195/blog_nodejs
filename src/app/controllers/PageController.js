@@ -1,3 +1,5 @@
+const Course = require('../models/Course');
+
 class PageController {
     /**
      * Show home
@@ -6,7 +8,10 @@ class PageController {
      * @param mixed res
      */
     index(req, res) {
-        return res.render('home');
+        Course.find({}, function (err, courses) {
+            if (!err) return res.json(courses);
+            return res.status(400).json({ error: 'Server error' });
+        });
     }
 }
 

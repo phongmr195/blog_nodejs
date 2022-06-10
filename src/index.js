@@ -5,12 +5,16 @@ const handlebars = require('express-handlebars');
 const app = express();
 const port = 5000;
 const routes = require('./routes');
+const db = require('./config/db');
 
 // Load static folder
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Use morgan
 app.use(morgan('combined'));
+
+// Connect to DB
+db.connect();
 
 // Use template engine for app
 app.engine(
