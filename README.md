@@ -1,5 +1,5 @@
-Blog simple with Nodejs, Expressjs, MongoDB
+# Blog simple with Nodejs, Expressjs, MongoDB
 
-# Run Script
+# Script
 - npm install
 - npm start
