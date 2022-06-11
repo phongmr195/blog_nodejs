@@ -1,4 +1,5 @@
 const Course = require('../models/Course');
+const { multipleMongooseToObject } = require('../../utils/mongoose');
 
 class PageController {
     /**
@@ -7,11 +8,14 @@ class PageController {
      * @param mixed req
      * @param mixed res
      */
-    index(req, res) {
-        Course.find({}, function (err, courses) {
-            if (!err) return res.json(courses);
-            return res.status(400).json({ error: 'Server error' });
-        });
+    index(req, res, next) {
+        Course.find({})
+            .then((courses) => {
+                res.render('home', {
+                    courses: multipleMongooseToObject(courses),
+                });
+            })
+            .catch(next);
     }
 }
 
