@@ -13,6 +13,11 @@ const Course = new Schema({
         min: 1,
     },
     image: String,
+    slug: {
+        type: String,
+        maxlength: 100,
+        min: 1,
+    },
     created_at: {
         type: Date,
         default: Date.now,
